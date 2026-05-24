@@ -28,7 +28,7 @@ jobs:
           mkdir -p reports
           zizmor . --format json > reports/zizmor.json || true
       - name: Upload workflow audit report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: workflow-audit-polyakov
           path: reports/zizmor.json
@@ -58,7 +58,7 @@ jobs:
       - name: Run detect-secrets
         run: detect-secrets scan . > reports/detect-secrets.json || true
       - name: Upload Python security reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: python-security-reports-polyakov
           path: reports/
@@ -96,7 +96,7 @@ jobs:
           scanners: vuln,secret,misconfig
           output: trivy-results.txt
       - name: Upload Trivy report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: trivy-report-polyakov
           path: trivy-results.txt
