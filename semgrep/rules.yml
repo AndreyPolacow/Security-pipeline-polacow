@@ -1,0 +1,7 @@
+rules:
+  - id: demo-hardcoded-token
+    message: "Учебное правило: найден псевдосекрет DEMO_TOKEN. В реальном проекте секреты должны храниться в GitHub Secrets или внешнем vault."
+    severity: WARNING
+    languages: [python]
+    pattern-regex: >
+      DEMO_TOKEN\s*=\s*['"][A-Za-z0-9_-]{12,}['"]
